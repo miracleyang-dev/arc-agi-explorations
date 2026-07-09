@@ -100,7 +100,7 @@ def render_task(task_id: str, dataset: str, out_dir: Path) -> Path:
             axes[1, col].set_title(f"test {j} · output", fontsize=9)
 
     fig.suptitle(f"{task_id}  ({dataset} / {task_path.parent.name})", fontsize=11)
-    fig.tight_layout(rect=[0, 0, 1, 0.96])
+    fig.tight_layout(rect=(0.0, 0.0, 1.0, 0.96))
 
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f"{task_id}.png"
