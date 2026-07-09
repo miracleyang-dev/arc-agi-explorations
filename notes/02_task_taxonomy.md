@@ -81,129 +81,95 @@
 
 ## 3 · Task details (seed × 15)
 
-> 每条模板：
-> - **Image**: `![](img/<id>.png)` — render 出来后自动出现
-> - **Priors / Transformations**: 二维坐标
-> - **Grid size**: 输入 → 输出尺寸
-> - **Rule (candidate)**: Claude 的猜测；YYH 验证后修正
-> - **Solver notes (YYH)**: 你手解的时间、卡点、用了什么直觉
-> - **Method-family fit**: 哪一族方法应该能拿下这题（DSL / LLM 直推 / TTT / brute-force search）
-
----
-
 ### 3.1 `007bbfb7` — Self-tiling by input pattern
 ![](img/007bbfb7.png)
 - **Priors**: P1, P4  **Transformations**: T7
 - **Grid**: 3×3 → 9×9
-- **Rule (candidate)**: 把输入本身当作一个 3×3 的 "mask"，在 9×9 输出里，只有输入中非零的那些位置上才复制一份原图；其余位置全零。即 output = kron(input≠0, input)。
-- **Solver notes (YYH)**: _[待填]_
-- **Method-family fit**: DSL 一句话；LLM 需要理解 self-reference，中等；TTT 应能学。
+- **Rule**: 把输入本身当作一个 3×3 的 "mask"，在 9×9 输出里，只有输入中非零的那些位置上才复制一份原图；其余位置全零。即 output = kron(input≠0, input)
 
 ### 3.2 `00d62c1b` — Enclosed region fill (topology)
 ![](img/00d62c1b.png)
 - **Priors**: P4  **Transformations**: T5
 - **Grid**: variable
-- **Rule (candidate)**: 输入是绿色不规则闭合曲线；把所有被绿色完全包围的黑色区域填成黄色，未被包围的黑色保持不变。
-- **Solver notes (YYH)**: _[待填]_
-- **Method-family fit**: DSL 需要 flood-fill + connected-component-with-boundary，可以做；纯 LLM 对拓扑理解很脆。
+- **Rule**: 输入是绿色不规则闭合曲线；把所有被绿色完全包围的黑色区域填成黄色，未被包围的黑色保持不变
 
 ### 3.3 `08ed6ac7` — Rank bars by length, recolor by rank
 ![](img/08ed6ac7.png)
 - **Priors**: P3, P1  **Transformations**: T6, T3
-- **Grid**: same size
-- **Rule (candidate)**: 输入若干竖直柱状条(灰色)，按高度排序；最高的染红、第二高染绿、第三高染蓝、第四高染黄（或类似固定映射）。
-- **Solver notes (YYH)**: _[待填]_
-- **Method-family fit**: DSL 需要 sort + zip；这是典型的"两阶段"任务，是 count-then-act 的代表。
+- **Grid**: the same size
+- **Rule**: 输入若干竖直柱状条(灰色)，按高度排序；最高的染蓝、第二高染红、第三高染绿、第四高染黄
 
 ### 3.4 `1cf80156` — Crop to non-background object
 ![](img/1cf80156.png)
 - **Priors**: P1  **Transformations**: T4
 - **Grid**: large → tight bbox
-- **Rule (candidate)**: 输入大背景（黑）中有一个非零 object；输出 = 该 object 的 bounding box。
-- **Solver notes (YYH)**: _[待填]_
-- **Method-family fit**: DSL 单行；几乎所有方法都能过。Baseline 用它 sanity check。
+- **Rule**: 输入大背景（黑）中有一个非零 object；输出 = 该 object 的 bounding box
 
 ### 3.5 `1e0a9b12` — Gravity down
 ![](img/1e0a9b12.png)
 - **Priors**: P2, P1  **Transformations**: T2
-- **Grid**: same size
-- **Rule (candidate)**: 每一列里所有非零像素沉到列底，保持原有相对上下顺序。
-- **Solver notes (YYH)**: _[待填]_
-- **Method-family fit**: DSL 天然；LLM 理解"方向"经常翻车（会误上下）。
+- **Grid**: the same size
+- **Rule**: 每一列里所有非零像素沉到列底，保持原有相对上下顺序
 
 ### 3.6 `28bf18c6` — Mirror duplicate
 ![](img/28bf18c6.png)
 - **Priors**: P1, P4  **Transformations**: T7
 - **Grid**: input → 2× wide
-- **Rule (candidate)**: 输入是一个 shape；输出把 shape 和它的水平镜像并排放置。
-- **Solver notes (YYH)**: _[待填]_
+- **Rule**: 输入是一个 shape；输出把 shape 和它的水平并排放置
 
 ### 3.7 `3af2c5a8` — Complete to fourfold symmetry
 ![](img/3af2c5a8.png)
 - **Priors**: P4  **Transformations**: T1, T5
-- **Grid**: input → 2× on both axes（一般 3×3 → 6×6）
-- **Rule (candidate)**: 把输入拼上它的水平、垂直、双向镜像，形成 2h×2w 的四折对称图。
-- **Solver notes (YYH)**: _[待填]_
+- **Grid**: input → 2× on both axes
+- **Rule**: 把输入拼上它的水平、垂直、双向镜像，形成 2h×2w 的四折对称图
 
 ### 3.8 `4258a5f9` — Draw border around each dot
 ![](img/4258a5f9.png)
 - **Priors**: P1, P4  **Transformations**: T8
-- **Grid**: same size
-- **Rule (candidate)**: 每个孤立像素被一圈灰色环绕（8-neighbor）。
-- **Solver notes (YYH)**: _[待填]_
+- **Grid**: the same size
+- **Rule**: 每个孤立像素被一圈灰色环绕（8-neighbor）
 
 ### 3.9 `5521c0d9` — Gravity up + something (verify!)
 ![](img/5521c0d9.png)
 - **Priors**: P2, P1  **Transformations**: T2
-- **Grid**: same size
-- **Rule (candidate)**: 每列物体上浮到列顶（gravity 反方向）。⚠️ 我不完全确定，可能还叠加一个"上浮后色块变高"的规则；render 后核对。
-- **Solver notes (YYH)**: _[待填]_
+- **Grid**: the same size
+- **Rule**: 每列物体上浮到列顶（gravity 反方向），保持整个 object 的大小和颜色不变
 
 ### 3.10 `6150a2bd` — 180° rotation
 ![](img/6150a2bd.png)
 - **Priors**: P4  **Transformations**: T1
-- **Grid**: same size
-- **Rule (candidate)**: 输出 = 输入旋转 180°。
-- **Solver notes (YYH)**: _[待填]_
-- **Method-family fit**: 最简单的对称题，sanity check 用。
+- **Grid**: the same size
+- **Rule**: 输出 = 输入旋转 180°
 
 ### 3.11 `6e02f1e3` — Color count → diagonal pattern
 ![](img/6e02f1e3.png)
 - **Priors**: P3  **Transformations**: T6
 - **Grid**: 3×3 → 3×3
-- **Rule (candidate)**: 数输入里不同颜色的种数 k；根据 k 输出一个固定 3×3 模板（k=1 全灰、k=2 一条对角线、k=3 另一种模式）。⚠️ 精确映射需 render 核对。
-- **Solver notes (YYH)**: _[待填]_
-- **Method-family fit**: 纯 count-then-lookup，DSL 需要枚举，LLM 反而容易。
+- **Rule**: 数输入里不同颜色的种数 k；根据 k 输出一个固定 3×3 模板（k=1 上面第一排全灰、k=2 一条从左上角到右下角的对角线、k=3 一条从左下角到右上角的对角线）
 
 ### 3.12 `9565186b` — Keep majority, recolor rest
 ![](img/9565186b.png)
 - **Priors**: P3, P1  **Transformations**: T3
-- **Grid**: same size
-- **Rule (candidate)**: 找出出现次数最多的颜色，保留；其余所有非零像素改成灰色（5）。
-- **Solver notes (YYH)**: _[待填]_
+- **Grid**: the same size
+- **Rule**: 找出出现次数最多的颜色，保留；其余所有非零像素改成灰色
 
 ### 3.13 `b1948b0a` — Simple recolor swap
 ![](img/b1948b0a.png)
 - **Priors**: P1  **Transformations**: T3
-- **Grid**: same size
-- **Rule (candidate)**: 把某种颜色（如洋红 6）全部换成另一种（如红 2），其他不变。
-- **Solver notes (YYH)**: _[待填]_
-- **Method-family fit**: DSL trivial；用来隔离"颜色映射"这一原子操作。
+- **Grid**: the same size
+- **Rule**: 把某种颜色（如洋红 6）全部换成另一种（如红 2），其他不变
 
 ### 3.14 `d4f3cd78` — Extend line to nearest wall, then fill gap
 ![](img/d4f3cd78.png)
 - **Priors**: P4, P1  **Transformations**: T8, T5
-- **Grid**: same size
-- **Rule (candidate)**: 输入是一段绿色开口的 U 形；从开口延伸一条线直到网格边缘，然后把 U 内部（原本开口的一侧）填上另一颜色。⚠️ 记不清细节，render 后核对。
-- **Solver notes (YYH)**: _[待填]_
+- **Grid**: the same size
+- **Rule**: 输入是一段绿色开口的 U 形；把 U 内部填上蓝色，然后从开口延伸一条线直到网格边缘
 
 ### 3.15 `ded97339` — Connect collinear dots
 ![](img/ded97339.png)
 - **Priors**: P4  **Transformations**: T8
-- **Grid**: same size
-- **Rule (candidate)**: 输入若干蓝点；同一行或同一列上的成对蓝点之间画蓝线连起来。
-- **Solver notes (YYH)**: _[待填]_
-
+- **Grid**: the same size
+- **Rule**: 输入若干蓝点；同一行或同一列上的成对蓝点之间画蓝线连起来
 ---
 
 ## 4 · What to do with this doc
