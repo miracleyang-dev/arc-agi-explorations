@@ -1,4 +1,4 @@
-# 02 · ARC-AGI Task Taxonomy (working doc)
+# 02 · ARC-AGI Task Taxonomy
 
 > **Purpose.** 这不是一份"分类完成品"，而是一个**诊断工具**。目的是在动手做 method 之前，把 ARC task 拆成
 > `prior × transformation` 的二维网格，看清楚：(a) 现有方法族各自能覆盖哪些 cell、(b) 哪些 cell 是公认盲区，

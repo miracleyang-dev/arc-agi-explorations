@@ -24,3 +24,6 @@ data/
 # Local experiments
 scratch/
 tmp/
+
+# references
+references/
