@@ -49,6 +49,14 @@ $$
 I_{IS}^{\text{scope}} = \mathbb{E}_{T \sim \text{scope}} \left[ \omega_T \cdot \theta_T \cdot \frac{\sum_{\text{curr}} P_C \cdot [S_{\min}(\text{curr}) > \theta_T]}{\sum_{\text{curr}} P_C \cdot (E_{IS,T,C} + P_{IS,T})} \right]
 $$
 
+**符号定义**（Chollet 2019 §II.3）：
+- $IS$：被评估的智能系统本身
+- $\text{scope}$：任务空间（ARC 里 = 所有满足 core-priors 约束的 grid task）；$T$ = 从中采样的单个任务
+- $\omega_T$：任务权重（相对重要性）；$\theta_T$：技能阈值，超过它才算"会做"（ARC 实操 = pass@2 正确）
+- $\text{curr}$ (curriculum)：一段学习经历，即 IS 在解题前接收的样本序列；$P_C$ = 该 curriculum 出现的概率
+- $S_{\min}(\text{curr})$：训练该 curriculum 后 IS 在 $T$ 上取得的**最低**技能水平；$[\cdot]$ 是 Iverson 括号（真=1 假=0）
+- $E_{IS,T,C}$：**经验成本**——消化 $C$ 所耗样本/算力；$P_{IS,T}$：**先验成本**——开始前已内嵌的相关先验（预训练、归纳偏置）
+
 看不下去公式的话，只记住**分子分母的直觉**：
 
 - **分子**：模型在任务 $T$ 上达到的技能水平（超过阈值 $\theta_T$ 才算数），并按任务难度加权。
