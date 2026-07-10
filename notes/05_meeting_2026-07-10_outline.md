@@ -1,4 +1,4 @@
-# 04 · Meeting Outline · 2026-07-10 15:00
+# 05 · Meeting Outline · 2026-07-10 15:00
 
 带：`notes/02` + arcprize.org/play
 
@@ -8,7 +8,7 @@
 ## 1 · What is ARC
 - Task = few input→output demo + test input
 - ARC-1 400/400，ARC-2 1000/120
-- 3-5 demo，pass@2；人类 ≥80%，SOTA ~55%/~10%
+- 3-5 demo，pass@2；人类 ≥80%，SOTA：ARC-1 55.5%（Kaggle 2024）/ ARC-2 24%（Kaggle 2025）
 - 掐死同分布 fine-tune
 
 ## 2 · Why hard（举 2 题）
@@ -30,7 +30,6 @@ P4  ✓               ✓           ✓
 ```
 - 15 seed 已分类
 - 空 cell = 方法族盲区
-- 4→2 合并见 `notes/02 §1.3`
 
 ## 5 · Landscape
 - Program synthesis (Icecuber, Hodel)
@@ -54,7 +53,7 @@ PAC-Bayes / meta-learning，理论无 debug，风险高
 - 顶会一作定位 = 博一目标
 
 ## 8 · 下周
-- 7/11-13：ARC Prize 2024 Tech Report + Akyürek TTT
+- 7/11-13：Akyürek TTT + Li induction⊕transduction
 - 7/14-17：minimum viable ARC solver
 - 7/18：Direction A 架构蓝图
 
