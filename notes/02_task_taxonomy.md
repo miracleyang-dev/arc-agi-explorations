@@ -5,15 +5,7 @@
 > 从而为后续 novelty 选点提供依据。
 >
 > **Meta.** 种子 15 个 task 由 Claude 从 ARC-AGI-1 training 里挑选、跨 prior×transformation 分散选取。
-> 每题的规则描述**必须**在 render 出图后由 YYH 亲自验证；实际规则若与描述不符，直接替换该 seed。
->
-> **How to grow this doc.**
-> ```
-> # render 单题
-> python scripts/render_task.py <task_id>
-> # 批量 render 已列进 taxonomy 的题
-> python scripts/render_task.py --ids 007bbfb7 00d62c1b ...
-> ```
+> 
 > 每次新加一题，做两件事：(1) 在 §2 coverage matrix 对应 cell 追加 task_id，(2) 在 §3 加一条 detail 条目。
 
 ---
@@ -31,12 +23,10 @@
 
 > 注：一个 task 通常横跨多个 prior。分类时列出所有**必需**的 prior，而不只是"最主要"的一个。
 
-> **§1.3 · Note on prior consolidation.** Chollet 2019 §III.1.2 原文把 core knowledge priors 分成 4 个
-> **独立**类别：*objectness*, *elementary physics*, *agentness*, *goal-directedness*。此处将它们**两两合并**
-> 为 P1 (objectness + elementary physics) 和 P2 (agentness + goal-directedness)，理由如下：
+> **Note on prior consolidation:** Chollet 2019 §III.1.2 原文把 core knowledge priors 分成 4 个独立类别：*objectness*, *elementary physics*, *agentness*, *goal-directedness*。此处选择将它们**两两合并**
+>理由如下：
 >
-> 1. **实证观察**：在 ARC-AGI-1 的 400 训练题里，几乎不存在"纯 physics 但不涉及 objects"或"纯 agent 但没有
->    goal"的任务——两者总是成对出现。保持独立会让 coverage matrix 出现大量结构性空 cell，稀释诊断价值。
+> 1. **实证观察**：在 ARC-AGI-1 的 400 训练题里，几乎不存在"纯 physics 但不涉及 objects"或"纯 agent 但没有"goal"的任务——两者总是成对出现。保持独立会让 coverage matrix 出现大量结构性空 cell，稀释诊断价值。
 > 2. **诊断目的**：本 taxonomy 的目的是**识别现有方法族的盲区**，而不是忠实复现 Chollet 的哲学分类。合并后
 >    每个 prior 都对应"一族独立的能力短板"，更适合驱动 method 选择。
 > 3. **可回退**：若日后发现某类 task 只需 physics 不需 objectness（或类似情况），可以在原地拆分回 4 类而不
@@ -183,7 +173,7 @@
 2. 给每个 task 加一列 "**human-solve time**"，看看**你人类**觉得最难的那几题是不是 method 上也最难；这本身是有 diagnostic value 的观察。
 3. 加一列 "**estimated DSL length**"——如果你用一个 100-primitive 的 DSL（参见 Hodel 2024），每题大致需要多少条指令。这个 metric 后面写 paper 直接能用。
 
-## 5 · Open questions（待和陈老师讨论 / 待自己想清楚）
+## 5 · Open questions
 
 - ARC-AGI-**2** 是否遵循同一 taxonomy？还是引入了新 prior / 新 transformation？（v2 官方声称任务更"抽象"，需实证）
 - Chollet 的 4-prior 是否够用？还是缺一个 "P5: composition" 来描述多步组合？(Kevin Ellis 系列工作的假设)
