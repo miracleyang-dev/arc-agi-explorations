@@ -1,12 +1,8 @@
 # 02 · ARC-AGI Task Taxonomy
 
-> **Purpose.** 这不是一份"分类完成品"，而是一个**诊断工具**。目的是在动手做 method 之前，把 ARC task 拆成
-> `prior × transformation` 的二维网格，看清楚：(a) 现有方法族各自能覆盖哪些 cell、(b) 哪些 cell 是公认盲区，
-> 从而为后续 novelty 选点提供依据。
+> **Purpose.** 这是一个**诊断工具**。目的是在动手做 method 之前，把 ARC task 拆成 `prior × transformation` 的二维网格，看清楚：(a) 现有方法族各自能覆盖哪些 cell、(b) 哪些 cell 是公认盲区，从而为后续 novelty 选点提供依据。
 >
-> **Meta.** 种子 15 个 task 由 Claude 从 ARC-AGI-1 training 里挑选、跨 prior×transformation 分散选取。
-> 
-> 每次新加一题，做两件事：(1) 在 §2 coverage matrix 对应 cell 追加 task_id，(2) 在 §3 加一条 detail 条目。
+> **Meta.** 种子尽可能跨 `prior × transformation` 分散选取。
 
 ---
 
@@ -20,20 +16,6 @@
 | **P2** | Agentness & goal-directedness | 场景中存在"意图"或"目标"（哪怕是隐含的），"应该发生什么" |
 | **P3** | Numbers & counting | 计数、比较大小、排序、少量算术；离散数值 |
 | **P4** | Basic geometry & topology | 对称/旋转/反射、连通性、包围、方向、拓扑等价 |
-
-> 注：一个 task 通常横跨多个 prior。分类时列出所有**必需**的 prior，而不只是"最主要"的一个。
-
-> **Note on prior consolidation:** Chollet 2019 §III.1.2 原文把 core knowledge priors 分成 4 个独立类别：*objectness*, *elementary physics*, *agentness*, *goal-directedness*。此处选择将它们**两两合并**
->理由如下：
->
-> 1. **实证观察**：在 ARC-AGI-1 的 400 训练题里，几乎不存在"纯 physics 但不涉及 objects"或"纯 agent 但没有"goal"的任务——两者总是成对出现。保持独立会让 coverage matrix 出现大量结构性空 cell，稀释诊断价值。
-> 2. **诊断目的**：本 taxonomy 的目的是**识别现有方法族的盲区**，而不是忠实复现 Chollet 的哲学分类。合并后
->    每个 prior 都对应"一族独立的能力短板"，更适合驱动 method 选择。
-> 3. **可回退**：若日后发现某类 task 只需 physics 不需 objectness（或类似情况），可以在原地拆分回 4 类而不
->    破坏已有 task 的分类结果。
->
-> **Trade-off**：这个改动会让"我为什么不完全 follow Chollet"成为一个需要解释的点。写论文/汇报时应显式指出
-> 是"pragmatic consolidation for diagnostic purposes"，而不是宣称 Chollet 分错了。
 
 ### 1.2 Transformation types (columns)
 
@@ -53,7 +35,6 @@
 ## 2 · Coverage matrix (二维分类)
 
 **读表规则（intersection semantics）**：每个 task 只落在**唯一一个 cell** = (它最本质的 prior) × (它最本质的 transformation)。
-- Row 里的 "&" 是**交集**：`P1 = objectness ∧ elementary physics`（同时需要两者），不是 OR。
 - §3 里一个 task 列出的多个 prior/transformation 是"这题需要**同时用到**的能力集合"，其中**首个**为主导，决定它在 matrix 里的位置；其余为辅助。
 - 因此 matrix 的稀疏性是**特征而非 bug**：它反映的是"这题主要考的是什么"，而不是"这题触及的所有能力"。
 
@@ -168,19 +149,13 @@
 - **Rule**: 输入若干蓝点；同一行或同一列上的成对蓝点之间画蓝线连起来
 ---
 
-## 4 · What to do with this doc
+## 4 · What to do with this doc next?
 
-**Meeting deliverable (7/10)**：
-- 从上面 15 题里挑 **3-4 题最有代表性的**做 meeting slide（推荐：`007bbfb7`(self-ref) + `08ed6ac7`(count-then-act) + `d4f3cd78`(connect+fill) + `1e0a9b12`(gravity)）——覆盖 4 种典型难点类型。
-- Coverage matrix 直接搬到 slide 里，作为"我理解 ARC 是什么"的证据。
-
-**下一步扩展（meeting 之后）**：
 1. 补齐 coverage matrix 里明显缺的 cell（尤其 P3×T2、P4×T7、P1×T1）——目标 30 题左右封版。
-2. 给每个 task 加一列 "**human-solve time**"，看看**你人类**觉得最难的那几题是不是 method 上也最难；这本身是有 diagnostic value 的观察。
-3. 加一列 "**estimated DSL length**"——如果你用一个 100-primitive 的 DSL（参见 Hodel 2024），每题大致需要多少条指令。这个 metric 后面写 paper 直接能用。
+2. 给每个 task 加一列 "**human-solve difficulty stars**"，看看**人类**觉得最难的那几题是不是 method 上也最难；这本身也是具有 diagnostic value 的观察。
+3. 加一列 "**estimated DSL length**"——如果用一个 100-primitive 的 DSL（Hodel 2024），每题大致需要多少条指令。
 
 ## 5 · Open questions
 
 - ARC-AGI-**2** 是否遵循同一 taxonomy？还是引入了新 prior / 新 transformation？（v2 官方声称任务更"抽象"，需实证）
-- Chollet 的 4-prior 是否够用？还是缺一个 "P5: composition" 来描述多步组合？(Kevin Ellis 系列工作的假设)
-- 一个 task 的 "hardness" 除了 DSL length 之外还应该用什么 metric？(candidates: min-# examples to disambiguate, human solve time, entropy of legal outputs given only test input)
+- 一个 task 的 "hardness" 除了 DSL length 之外还应该用什么 metric？(candidates: min number of examples to disambiguate, human-solve difficulty stars, entropy of legal outputs given only test input)
