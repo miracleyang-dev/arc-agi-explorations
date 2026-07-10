@@ -52,20 +52,26 @@
 
 ## 2 · Coverage matrix (二维分类)
 
+**读表规则（intersection semantics）**：每个 task 只落在**唯一一个 cell** = (它最本质的 prior) × (它最本质的 transformation)。
+- Row 里的 "&" 是**交集**：`P1 = objectness ∧ elementary physics`（同时需要两者），不是 OR。
+- §3 里一个 task 列出的多个 prior/transformation 是"这题需要**同时用到**的能力集合"，其中**首个**为主导，决定它在 matrix 里的位置；其余为辅助。
+- 因此 matrix 的稀疏性是**特征而非 bug**：它反映的是"这题主要考的是什么"，而不是"这题触及的所有能力"。
+
 单元格填当前已归类的 task_id。空白 cell = **未覆盖或待发现**（后期做 method 时要重点关注哪些 cell 全空）。
 
 |              | T1 sym/rot | T2 gravity | T3 recolor | T4 crop | T5 fill | T6 count→act | T7 tile | T8 connect |
 |--------------|------------|------------|------------|---------|---------|--------------|---------|------------|
-| **P1 object**|            |            | `b1948b0a` | `1cf80156` |     |              | `007bbfb7`, `28bf18c6` |            |
+| **P1 object**|            |            | `b1948b0a` | `1cf80156` |     |              | `007bbfb7`, `28bf18c6` | `4258a5f9` |
 | **P2 goal**  |            | `1e0a9b12`, `5521c0d9` |    |         |         |              |         |            |
 | **P3 number**|            |            | `9565186b` |         |         | `08ed6ac7`, `6e02f1e3` |    |     |
-| **P4 geom**  | `3af2c5a8`, `6150a2bd` |  |     |         | `00d62c1b` |         |         | `4258a5f9`, `d4f3cd78`, `ded97339` |
+| **P4 geom**  | `3af2c5a8`, `6150a2bd` |  |     |         | `00d62c1b` |         |         | `d4f3cd78`, `ded97339` |
 
 **Coverage 观察（首轮）**：
-- T1 目前只有纯几何题 → **P1×T1**（物体级对称，比如"把某个 object 镜像"）是常见但**这里没覆盖**，需要补一题
-- T3（recolor）几乎没跟 T6（count）以外的 prior 交叉 → **P2×T3**（"根据 agent 应该到的位置来 recolor"）是难点
-- **P3×T2**（数量决定移动距离/次数）全空——这是 count-then-act 的高阶变体，值得日后单独找题
-- T7（tile）只挂在 P1，**P4×T7**（对称性驱动的 tiling，比如"按镜像方向扩展"）值得补
+- T1 目前只有纯几何题 → **P1×T1**（物体级对称，比如"把某个 object 镜像/旋转"）常见但这里没覆盖，需补一题
+- T3（recolor）只落在 P1、P3 → **P2×T3**（"按 agent 目标 recolor"）与 **P4×T3**（"按对称性 recolor"）都空，前者尤其难
+- **P3×T2**（数量决定移动距离/次数）全空——count-then-act 的高阶变体，值得日后单独找题
+- T7（tile）只挂在 P1 → **P4×T7**（对称性驱动的 tiling，比如"按镜像方向扩展"）值得补
+- 整个 P2 行只有 T2 一个 cell —— agent/goal-directed prior 的表达面窄，可能是 ARC-1 本身的偏差，也可能是我们 seed 采样偏差
 
 ---
 
