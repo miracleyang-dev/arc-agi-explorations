@@ -1,4 +1,4 @@
-# 08 · DSL Changelog & 版本对照
+# 05 · DSL Changelog & 版本对照
 
 > 目的：记录 solver DSL 每一版都加了什么、为什么加、加完效果如何。
 > 一个方法一句话，一行看得清。所有原语在 `solver/dsl.py`。

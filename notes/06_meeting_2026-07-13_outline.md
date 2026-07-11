@@ -1,4 +1,4 @@
-# 05 · Meeting Outline · 2026-07-13 10:00
+# 06 · Meeting Outline · 2026-07-13 10:00
 
 > 时间从 7/10 15:00 改到 7/13 10:00（陈老师有事）。
 > 多出的 7/11-12 用来跑 minimum viable solver + 出 baseline 数字，见 §8。
@@ -61,7 +61,7 @@ PAC-Bayes / meta-learning，理论无 debug，风险高
 | **v3** | **197** | **43** | **10.75%** | 326s |
 
 - 一键复现：`python -m solver.runner --split training --max-tasks -1 --depth 2 --budget 5`
-- 详细 changelog 与每版原语清单：`notes/08_dsl_changelog.md`
+- 详细 changelog 与每版原语清单：`notes/05_dsl_changelog.md`
 - **每版严格支配前一版**（0 退化）；depth-2 到 v3 才开始有实质贡献（18/43）
 
 **关键 talking points**：
@@ -79,12 +79,12 @@ PAC-Bayes / meta-learning，理论无 debug，风险高
 **Meeting 前（7/11-12，本周末）**：
 - 7/11 上午：requirements + fetch_data + solver 骨架 + smoke test（已完成）
 - 7/11 下午：跑满 ARC-1 training 400 题，记录 baseline
-- 7/12：Akyürek TTT 精读笔记 → `notes/06_akyurek_ttt.md`
+- 7/12：Akyürek TTT 精读笔记 → `notes/07_akyurek_ttt.md`
 - 7/13 早：把数字填回 §6.5，准备 meeting
 
 **Meeting 后（7/14-）**：
 - 7/14-15：Li 2024 induction⊕transduction 精读
-- 7/16-20：Direction A 架构蓝图 → `notes/07_direction_A_blueprint.md`
+- 7/16-20：Direction A 架构蓝图 → `notes/08_direction_A_blueprint.md`
 - 7/21+：DSL 扩到 Hodel-level，开始跑消融
 
 ## 9 · 问陈老师
