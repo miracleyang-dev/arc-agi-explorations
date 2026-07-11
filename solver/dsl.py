@@ -187,6 +187,269 @@ def _scale(k: int) -> Callable[[Grid], Grid]:
     return f
 
 
+# --- extension pack (v3, 7/11 PM): structured ops --------------------------
+# After v2 (170 prims) saturated near 5%, we add operations that go beyond
+# element-wise recolor and pure geometry:
+#   - object-level (connected components with 4-connectivity)
+#   - symmetry completion (half-mirror and OR-overlay)
+#   - self-stacking (double the grid along an axis)
+#   - shape reduction (drop empty rows/cols, binarize)
+#   - flood-fill of enclosed background regions
+# These are the last DSL additions we plan to make; further gains require
+# breaking the pure Grid->Grid contract (counting, pattern completion), so
+# after v3 we freeze the DSL and pivot to learned operators.
+
+
+def _to_list(g: Grid) -> list[list[int]]:
+    return [list(row) for row in g]
+
+
+def _to_grid(g: list[list[int]]) -> Grid:
+    return tuple(tuple(row) for row in g)
+
+
+def _find_components(g: Grid) -> list[list[tuple[int, int]]]:
+    """4-connected components over non-zero cells. Two cells with the same
+    color and adjacent (4-neighborhood) go in the same component. Cells with
+    value 0 (background) are excluded."""
+    h, w = len(g), len(g[0]) if g else 0
+    seen = [[False] * w for _ in range(h)]
+    comps: list[list[tuple[int, int]]] = []
+    for r in range(h):
+        for c in range(w):
+            if seen[r][c] or g[r][c] == 0:
+                continue
+            color = g[r][c]
+            stack = [(r, c)]
+            comp: list[tuple[int, int]] = []
+            while stack:
+                y, x = stack.pop()
+                if y < 0 or y >= h or x < 0 or x >= w:
+                    continue
+                if seen[y][x] or g[y][x] != color:
+                    continue
+                seen[y][x] = True
+                comp.append((y, x))
+                stack.extend([(y + 1, x), (y - 1, x), (y, x + 1), (y, x - 1)])
+            comps.append(comp)
+    return comps
+
+
+def _keep_largest_object(g: Grid) -> Grid:
+    """Zero out everything except the largest 4-connected non-zero component.
+    Ties broken by first-seen (top-left)."""
+    comps = _find_components(g)
+    if not comps:
+        return g
+    largest = max(comps, key=len)
+    keep = set(largest)
+    h, w = len(g), len(g[0])
+    out = [[0] * w for _ in range(h)]
+    for (r, c) in keep:
+        out[r][c] = g[r][c]
+    return _to_grid(out)
+
+
+def _outline_objects(g: Grid) -> Grid:
+    """For each object, keep only cells with at least one 0 or out-of-grid
+    4-neighbor; zero the interior."""
+    h, w = len(g), len(g[0]) if g else 0
+    out = [[0] * w for _ in range(h)]
+    for r in range(h):
+        for c in range(w):
+            if g[r][c] == 0:
+                continue
+            on_edge = False
+            for dr, dc in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                nr, nc = r + dr, c + dc
+                if nr < 0 or nr >= h or nc < 0 or nc >= w or g[nr][nc] == 0:
+                    on_edge = True
+                    break
+            if on_edge:
+                out[r][c] = g[r][c]
+    return _to_grid(out)
+
+
+def _interior_of_objects(g: Grid) -> Grid:
+    """Inverse of outline: keep only cells whose 4 neighbors are all non-zero."""
+    h, w = len(g), len(g[0]) if g else 0
+    out = [[0] * w for _ in range(h)]
+    for r in range(h):
+        for c in range(w):
+            if g[r][c] == 0:
+                continue
+            interior = True
+            for dr, dc in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                nr, nc = r + dr, c + dc
+                if nr < 0 or nr >= h or nc < 0 or nc >= w or g[nr][nc] == 0:
+                    interior = False
+                    break
+            if interior:
+                out[r][c] = g[r][c]
+    return _to_grid(out)
+
+
+# --- symmetry completion (half-mirror) ---
+
+def _sym_h_from_left(g: Grid) -> Grid:
+    """Copy the left half onto the right half (mirror). For odd width, the
+    center column is preserved from the input."""
+    if not g:
+        return g
+    w = len(g[0])
+    half = w // 2
+    out = []
+    for row in g:
+        new = list(row)
+        for c in range(half):
+            new[w - 1 - c] = row[c]
+        out.append(tuple(new))
+    return tuple(out)
+
+
+def _sym_h_from_right(g: Grid) -> Grid:
+    if not g:
+        return g
+    w = len(g[0])
+    half = w // 2
+    out = []
+    for row in g:
+        new = list(row)
+        for c in range(half):
+            new[c] = row[w - 1 - c]
+        out.append(tuple(new))
+    return tuple(out)
+
+
+def _sym_v_from_top(g: Grid) -> Grid:
+    if not g:
+        return g
+    h = len(g)
+    half = h // 2
+    out = _to_list(g)
+    for r in range(half):
+        out[h - 1 - r] = list(g[r])
+    return _to_grid(out)
+
+
+def _sym_v_from_bottom(g: Grid) -> Grid:
+    if not g:
+        return g
+    h = len(g)
+    half = h // 2
+    out = _to_list(g)
+    for r in range(half):
+        out[r] = list(g[h - 1 - r])
+    return _to_grid(out)
+
+
+# --- symmetry overlay (OR two views) ---
+
+def _overlay_max(g1: Grid, g2: Grid) -> Grid:
+    """Element-wise max. Assumes both grids have identical shape."""
+    return tuple(
+        tuple(max(g1[r][c], g2[r][c]) for c in range(len(g1[0])))
+        for r in range(len(g1))
+    )
+
+
+def _overlay_flip_h_or(g: Grid) -> Grid:
+    return _overlay_max(g, _flip_h(g))
+
+
+def _overlay_flip_v_or(g: Grid) -> Grid:
+    return _overlay_max(g, _flip_v(g))
+
+
+def _overlay_rot180_or(g: Grid) -> Grid:
+    return _overlay_max(g, _rot180(g))
+
+
+def _overlay_transpose_or(g: Grid) -> Grid:
+    """Only defined for square grids; return input unchanged otherwise."""
+    if not g or len(g) != len(g[0]):
+        return g
+    return _overlay_max(g, _transpose(g))
+
+
+# --- self stacking ---
+
+def _hcat_self(g: Grid) -> Grid:
+    return tuple(row + row for row in g)
+
+
+def _hcat_flip_h(g: Grid) -> Grid:
+    return tuple(row + tuple(reversed(row)) for row in g)
+
+
+def _vcat_self(g: Grid) -> Grid:
+    return g + g
+
+
+def _vcat_flip_v(g: Grid) -> Grid:
+    return g + tuple(reversed(g))
+
+
+# --- shape reduction ---
+
+def _remove_empty_rows(g: Grid) -> Grid:
+    kept = tuple(row for row in g if any(v != 0 for v in row))
+    return kept if kept else g
+
+
+def _remove_empty_cols(g: Grid) -> Grid:
+    if not g:
+        return g
+    w = len(g[0])
+    keep_c = [c for c in range(w) if any(row[c] != 0 for row in g)]
+    if not keep_c:
+        return g
+    return tuple(tuple(row[c] for c in keep_c) for row in g)
+
+
+def _binarize_nz_to_1(g: Grid) -> Grid:
+    return tuple(tuple(1 if v != 0 else 0 for v in row) for row in g)
+
+
+# --- enclosed-region flood fill ---
+
+def _fill_enclosed_zero_with(color: int) -> Callable[[Grid], Grid]:
+    """
+    Any 0-cell not reachable from the grid border via 4-connected 0-cells is
+    considered enclosed by non-zero cells; recolor those to `color`.
+    Cells reachable from the border stay 0.
+    """
+    def f(g: Grid) -> Grid:
+        if not g:
+            return g
+        h, w = len(g), len(g[0])
+        reachable = [[False] * w for _ in range(h)]
+        stack: list[tuple[int, int]] = []
+        for r in range(h):
+            for c in (0, w - 1):
+                if g[r][c] == 0:
+                    stack.append((r, c))
+        for c in range(w):
+            for r in (0, h - 1):
+                if g[r][c] == 0:
+                    stack.append((r, c))
+        while stack:
+            y, x = stack.pop()
+            if y < 0 or y >= h or x < 0 or x >= w:
+                continue
+            if reachable[y][x] or g[y][x] != 0:
+                continue
+            reachable[y][x] = True
+            stack.extend([(y + 1, x), (y - 1, x), (y, x + 1), (y, x - 1)])
+        out = _to_list(g)
+        for r in range(h):
+            for c in range(w):
+                if g[r][c] == 0 and not reachable[r][c]:
+                    out[r][c] = color
+        return _to_grid(out)
+    return f
+
+
 # --- registry ----------------------------------------------------------------
 
 def build_primitives() -> list[Primitive]:
@@ -237,4 +500,27 @@ def build_primitives() -> list[Primitive]:
     # Keep-only-one-color mask (object extraction).
     for c in range(1, 10):
         prims.append((f"keep_only_{c}", _keep_only_color(c)))
+    # v3 additions: structured operations.
+    prims.extend([
+        ("keep_largest_obj", _keep_largest_object),
+        ("outline_objects", _outline_objects),
+        ("interior_of_objects", _interior_of_objects),
+        ("sym_h_from_left", _sym_h_from_left),
+        ("sym_h_from_right", _sym_h_from_right),
+        ("sym_v_from_top", _sym_v_from_top),
+        ("sym_v_from_bottom", _sym_v_from_bottom),
+        ("overlay_flip_h_or", _overlay_flip_h_or),
+        ("overlay_flip_v_or", _overlay_flip_v_or),
+        ("overlay_rot180_or", _overlay_rot180_or),
+        ("overlay_transpose_or", _overlay_transpose_or),
+        ("hcat_self", _hcat_self),
+        ("hcat_flip_h", _hcat_flip_h),
+        ("vcat_self", _vcat_self),
+        ("vcat_flip_v", _vcat_flip_v),
+        ("remove_empty_rows", _remove_empty_rows),
+        ("remove_empty_cols", _remove_empty_cols),
+        ("binarize_nz_to_1", _binarize_nz_to_1),
+    ])
+    for c in range(1, 10):
+        prims.append((f"fill_enclosed_{c}", _fill_enclosed_zero_with(c)))
     return prims
