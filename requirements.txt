@@ -1,0 +1,13 @@
+# ARC-AGI-Explorations · runtime dependencies
+#
+# Python: >=3.10, <3.13
+# 说明：
+#   - 用 `~=` (compatible release) 而不是 `==`，允许打补丁但锁大版本，避免上游 breaking change。
+#   - numpy 1.26 是最后一个稳定的 1.x 系列；2.x 与部分老库（如 numba）ABI 不兼容，先不上。
+#   - matplotlib / pillow 只在 render_task.py 里用；如果后续 solver 完全脱离可视化，可以按需再瘦。
+#   - tqdm 是 Hodel arc-dsl 的运行时依赖，同时 solver 主循环也会用来打进度。
+
+numpy~=1.26.0
+matplotlib~=3.8.0
+pillow~=10.2.0
+tqdm~=4.66.0
