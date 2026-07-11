@@ -11,7 +11,27 @@
 |------|-----------|--------------|-----------|-----------|------|
 | v1 (7/11 AM) | 63  | 10 | 2.5%  | 起点     | 27s |
 | v2 (7/11 PM) | 170 | 19 | 4.75% | +9，全来自 `crop_bbox_nz` / `gravity_*` / `scale_*` / 组合  | 204s |
-| v3 (7/11 PM, 计划) | 197 | ? | ? | 目标 8-12% | ~5min |
+| v3 (7/11 PM) | 197 | **43** | **10.75%** | +24, 0 退化。主要来自对称堆叠 (`vcat_flip_v`, `hcat_flip_h`)、`fill_enclosed_*`、`outline_objects`、`keep_largest_obj` | 326s |
+
+**深度分布**（v3）：depth-1 = 25 题，depth-2 = 18 题。depth-2 终于有实质贡献（v2 只有 4）。
+
+**v3 solved 里 primitive 使用频次** top-10：
+
+| # | primitive | 次数 | 备注 |
+|---|-----------|-----|------|
+| 1 | `crop_bbox_nz` | 8 | 三版都是 MVP |
+| 2 | `vcat_flip_v`  | 6 | v3 新增，最大黑马 |
+| 3 | `hcat_flip_h`  | 5 | v3 新增 |
+| 4 | `outline_objects` | 4 | v3 新增 |
+| 5 | `keep_largest_obj` | 3 | v3 新增 |
+| 6 | `fill_enclosed_2` | 2 | 9 个 fill_enclosed 里 3 个用上 |
+| 7 | `rot180` / `flip_h` / `flip_v` / `transpose` / `scale_2` / `hcat_self` | 各 2 | v1/v2 老原语 |
+| 8 | `map_2_to_0` | 1 | 90 个 `map_a_to_b` 里唯一贡献；证实 v2 判断 |
+
+**结论**：
+- 每版都严格支配前一版（0 退化）—— 说明 DSL 扩展是"加法式"的，没有互相踩脚。
+- v3 提升幅度 (2.3×) 比 v2 (1.9×) 反而更大 —— 结构化算子（连通域、对称、堆叠）单个的 ROI 远高于 90 个参数化重涂。**教训**：扩 DSL 时优先加**结构化算子**，别加**参数展开**。
+- 43/400 大概率是这个 DSL 的天花板附近。ARC-1 剩下的 357 题里，大多需要 counting / pattern-generation / test-input-conditioned rules —— pure Grid→Grid 已经吃不到。
 
 **规律观察**：63→170（+170% 原语）只换来 solve rate 1.9×。**边际递减**。
 v3 是**最后一版 DSL**——之后精力全给 Direction A。
