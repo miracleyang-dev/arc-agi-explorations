@@ -12,8 +12,38 @@ the current landscape of approaches, before attempting any new method.
 
 ```
 notes/       Paper-reading notes and task-taxonomy write-ups
-experiments/ Small, self-contained scripts (added later)
+scripts/     Utilities: render_task.py, fetch_data.py, setup_venv.bat
+solver/      MVP brute-force DSL solver + smoke tests
 data/        Ignored — ARC tasks are downloaded locally, not committed
+```
+
+## Setup (Windows, CMD)
+
+One-time install:
+
+```cmd
+scripts\setup_venv.bat
+```
+
+This creates `.venv\`, upgrades pip, and installs runtime + dev deps.
+
+Every new terminal after that:
+
+```cmd
+.venv\Scripts\activate
+```
+
+Fetch ARC-AGI-1 and ARC-AGI-2 raw JSON (idempotent, safe to re-run):
+
+```cmd
+python scripts\fetch_data.py
+```
+
+Quick verify:
+
+```cmd
+python -m solver.tests.test_smoke
+python -m solver.runner --split training --max-tasks 5
 ```
 
 ## Planned notes
