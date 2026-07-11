@@ -1,0 +1,2860 @@
+{
+  "config": {
+    "dataset": "arc-agi-1",
+    "split": "training",
+    "max_tasks": null,
+    "max_depth": 2,
+    "time_budget_sec": 5.0,
+    "n_primitives": 170
+  },
+  "summary": {
+    "n_tasks": 400,
+    "n_solved": 19,
+    "solve_rate": 0.0475,
+    "total_elapsed_sec": 204.14
+  },
+  "per_task": [
+    {
+      "task_id": "007bbfb7",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.087
+    },
+    {
+      "task_id": "00d62c1b",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.189
+    },
+    {
+      "task_id": "017c7c7b",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.14
+    },
+    {
+      "task_id": "025d127b",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.473
+    },
+    {
+      "task_id": "045e512c",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.215
+    },
+    {
+      "task_id": "0520fde7",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.118
+    },
+    {
+      "task_id": "05269061",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.232
+    },
+    {
+      "task_id": "05f2a901",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.475
+    },
+    {
+      "task_id": "06df4c85",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.15
+    },
+    {
+      "task_id": "08ed6ac7",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.318
+    },
+    {
+      "task_id": "09629e4f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.453
+    },
+    {
+      "task_id": "0962bcdd",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.504
+    },
+    {
+      "task_id": "0a938d79",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.648
+    },
+    {
+      "task_id": "0b148d64",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.265
+    },
+    {
+      "task_id": "0ca9ddb6",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.311
+    },
+    {
+      "task_id": "0d3d703e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.086
+    },
+    {
+      "task_id": "0dfd9992",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.253
+    },
+    {
+      "task_id": "0e206a2e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.764
+    },
+    {
+      "task_id": "10fcaaa3",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.075
+    },
+    {
+      "task_id": "11852cab",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.373
+    },
+    {
+      "task_id": "1190e5a7",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.741
+    },
+    {
+      "task_id": "137eaa0f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.452
+    },
+    {
+      "task_id": "150deff5",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.374
+    },
+    {
+      "task_id": "178fcbfb",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.313
+    },
+    {
+      "task_id": "1a07d186",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.011
+    },
+    {
+      "task_id": "1b2d62fb",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.179
+    },
+    {
+      "task_id": "1b60fb0c",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.361
+    },
+    {
+      "task_id": "1bfc4729",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.358
+    },
+    {
+      "task_id": "1c786137",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.469
+    },
+    {
+      "task_id": "1caeab9d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.203
+    },
+    {
+      "task_id": "1cf80156",
+      "solved": true,
+      "program": [
+        "crop_bbox_nz"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "1e0a9b12",
+      "solved": true,
+      "program": [
+        "gravity_down"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "1e32b0e9",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.893
+    },
+    {
+      "task_id": "1f0c79e5",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.32
+    },
+    {
+      "task_id": "1f642eb9",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.363
+    },
+    {
+      "task_id": "1f85a75f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 2.391
+    },
+    {
+      "task_id": "1f876c06",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.381
+    },
+    {
+      "task_id": "1fad071e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.33
+    },
+    {
+      "task_id": "2013d3e2",
+      "solved": true,
+      "program": [
+        "crop_bbox_nz",
+        "crop_tl_half"
+      ],
+      "depth": 2,
+      "elapsed_sec": 0.02
+    },
+    {
+      "task_id": "2204b7a8",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.374
+    },
+    {
+      "task_id": "22168020",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.381
+    },
+    {
+      "task_id": "22233c11",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.38
+    },
+    {
+      "task_id": "2281f1f4",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.366
+    },
+    {
+      "task_id": "228f6490",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.379
+    },
+    {
+      "task_id": "22eb0ac0",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.372
+    },
+    {
+      "task_id": "234bbc79",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.136
+    },
+    {
+      "task_id": "23581191",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.341
+    },
+    {
+      "task_id": "239be575",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.152
+    },
+    {
+      "task_id": "23b5c85d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.369
+    },
+    {
+      "task_id": "253bf280",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.325
+    },
+    {
+      "task_id": "25d487eb",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.488
+    },
+    {
+      "task_id": "25d8a9c8",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.09
+    },
+    {
+      "task_id": "25ff71a9",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.085
+    },
+    {
+      "task_id": "264363fd",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 2.383
+    },
+    {
+      "task_id": "272f95fa",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.011
+    },
+    {
+      "task_id": "27a28665",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.091
+    },
+    {
+      "task_id": "28bf18c6",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.275
+    },
+    {
+      "task_id": "28e73c20",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.183
+    },
+    {
+      "task_id": "29623171",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.446
+    },
+    {
+      "task_id": "29c11459",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.225
+    },
+    {
+      "task_id": "29ec7d0e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.983
+    },
+    {
+      "task_id": "2bcee788",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.36
+    },
+    {
+      "task_id": "2bee17df",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.512
+    },
+    {
+      "task_id": "2c608aff",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.4
+    },
+    {
+      "task_id": "2dc579da",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.147
+    },
+    {
+      "task_id": "2dd70a9a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.189
+    },
+    {
+      "task_id": "2dee498d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.135
+    },
+    {
+      "task_id": "31aa019c",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.364
+    },
+    {
+      "task_id": "321b1fc6",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.364
+    },
+    {
+      "task_id": "32597951",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.881
+    },
+    {
+      "task_id": "3345333e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.797
+    },
+    {
+      "task_id": "3428a4f5",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.336
+    },
+    {
+      "task_id": "3618c87e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.148
+    },
+    {
+      "task_id": "3631a71a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 2.435
+    },
+    {
+      "task_id": "363442ee",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.408
+    },
+    {
+      "task_id": "36d67576",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.574
+    },
+    {
+      "task_id": "36fdfd69",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.93
+    },
+    {
+      "task_id": "3906de3d",
+      "solved": true,
+      "program": [
+        "gravity_up"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "39a8645d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.662
+    },
+    {
+      "task_id": "39e1d7f9",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.573
+    },
+    {
+      "task_id": "3aa6fb7a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.236
+    },
+    {
+      "task_id": "3ac3eb23",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.235
+    },
+    {
+      "task_id": "3af2c5a8",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.095
+    },
+    {
+      "task_id": "3bd67248",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.729
+    },
+    {
+      "task_id": "3bdb4ada",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.665
+    },
+    {
+      "task_id": "3befdf3e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.36
+    },
+    {
+      "task_id": "3c9b0459",
+      "solved": true,
+      "program": [
+        "rot180"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "3de23699",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.233
+    },
+    {
+      "task_id": "3e980e27",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.574
+    },
+    {
+      "task_id": "3eda0437",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.281
+    },
+    {
+      "task_id": "3f7978a0",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.328
+    },
+    {
+      "task_id": "40853293",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.676
+    },
+    {
+      "task_id": "4093f84a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.655
+    },
+    {
+      "task_id": "41e4d17e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.728
+    },
+    {
+      "task_id": "4258a5f9",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.324
+    },
+    {
+      "task_id": "4290ef0e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.697
+    },
+    {
+      "task_id": "42a50994",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.66
+    },
+    {
+      "task_id": "4347f46a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.915
+    },
+    {
+      "task_id": "444801d8",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.36
+    },
+    {
+      "task_id": "445eab21",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.368
+    },
+    {
+      "task_id": "447fd412",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.591
+    },
+    {
+      "task_id": "44d8ac46",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.516
+    },
+    {
+      "task_id": "44f52bb0",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.088
+    },
+    {
+      "task_id": "4522001f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.088
+    },
+    {
+      "task_id": "4612dd53",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.411
+    },
+    {
+      "task_id": "46442a0e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.065
+    },
+    {
+      "task_id": "469497ad",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.148
+    },
+    {
+      "task_id": "46f33fce",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.369
+    },
+    {
+      "task_id": "47c1f68c",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.456
+    },
+    {
+      "task_id": "484b58aa",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 2.264
+    },
+    {
+      "task_id": "48d8fb45",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.357
+    },
+    {
+      "task_id": "4938f0c2",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.545
+    },
+    {
+      "task_id": "496994bd",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.217
+    },
+    {
+      "task_id": "49d1d64f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.062
+    },
+    {
+      "task_id": "4be741c5",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.732
+    },
+    {
+      "task_id": "4c4377d9",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.095
+    },
+    {
+      "task_id": "4c5c2cf0",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.652
+    },
+    {
+      "task_id": "50846271",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.306
+    },
+    {
+      "task_id": "508bd3b6",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.518
+    },
+    {
+      "task_id": "50cb2852",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.642
+    },
+    {
+      "task_id": "5117e062",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.592
+    },
+    {
+      "task_id": "5168d44c",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.331
+    },
+    {
+      "task_id": "539a4f51",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.147
+    },
+    {
+      "task_id": "53b68214",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.236
+    },
+    {
+      "task_id": "543a7ed5",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.743
+    },
+    {
+      "task_id": "54d82841",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.278
+    },
+    {
+      "task_id": "54d9e175",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.152
+    },
+    {
+      "task_id": "5521c0d9",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.718
+    },
+    {
+      "task_id": "5582e5ca",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.096
+    },
+    {
+      "task_id": "5614dbcf",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.342
+    },
+    {
+      "task_id": "56dc2b01",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.249
+    },
+    {
+      "task_id": "56ff96f3",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.388
+    },
+    {
+      "task_id": "57aa92db",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.682
+    },
+    {
+      "task_id": "5ad4f10b",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.407
+    },
+    {
+      "task_id": "5bd6f4ac",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.349
+    },
+    {
+      "task_id": "5c0a986e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.374
+    },
+    {
+      "task_id": "5c2c9af4",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.458
+    },
+    {
+      "task_id": "5daaa586",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.395
+    },
+    {
+      "task_id": "60b61512",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.326
+    },
+    {
+      "task_id": "6150a2bd",
+      "solved": true,
+      "program": [
+        "rot180"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "623ea044",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.716
+    },
+    {
+      "task_id": "62c24649",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.09
+    },
+    {
+      "task_id": "63613498",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.378
+    },
+    {
+      "task_id": "6430c8c4",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.225
+    },
+    {
+      "task_id": "6455b5f5",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.783
+    },
+    {
+      "task_id": "662c240a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.205
+    },
+    {
+      "task_id": "67385a82",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.088
+    },
+    {
+      "task_id": "673ef223",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.592
+    },
+    {
+      "task_id": "6773b310",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.466
+    },
+    {
+      "task_id": "67a3c6ac",
+      "solved": true,
+      "program": [
+        "flip_h"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "67a423a3",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.122
+    },
+    {
+      "task_id": "67e8384a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.089
+    },
+    {
+      "task_id": "681b3aeb",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.363
+    },
+    {
+      "task_id": "6855a6e4",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.721
+    },
+    {
+      "task_id": "68b16354",
+      "solved": true,
+      "program": [
+        "flip_v"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "694f12f3",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.368
+    },
+    {
+      "task_id": "6a1e5592",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.494
+    },
+    {
+      "task_id": "6aa20dc0",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.143
+    },
+    {
+      "task_id": "6b9890af",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.105
+    },
+    {
+      "task_id": "6c434453",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.371
+    },
+    {
+      "task_id": "6cdd2623",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.728
+    },
+    {
+      "task_id": "6cf79266",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.211
+    },
+    {
+      "task_id": "6d0160f0",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.471
+    },
+    {
+      "task_id": "6d0aefbc",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.091
+    },
+    {
+      "task_id": "6d58a25d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.16
+    },
+    {
+      "task_id": "6d75e8bb",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.507
+    },
+    {
+      "task_id": "6e02f1e3",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.088
+    },
+    {
+      "task_id": "6e19193c",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.367
+    },
+    {
+      "task_id": "6e82a1ae",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.376
+    },
+    {
+      "task_id": "6ecd11f4",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.622
+    },
+    {
+      "task_id": "6f8cd79b",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.089
+    },
+    {
+      "task_id": "6fa7a44f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.087
+    },
+    {
+      "task_id": "72322fa7",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.823
+    },
+    {
+      "task_id": "72ca375d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.37
+    },
+    {
+      "task_id": "73251a56",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.349
+    },
+    {
+      "task_id": "7447852a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.134
+    },
+    {
+      "task_id": "7468f01a",
+      "solved": true,
+      "program": [
+        "flip_h",
+        "crop_bbox_nz"
+      ],
+      "depth": 2,
+      "elapsed_sec": 0.011
+    },
+    {
+      "task_id": "746b3537",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.093
+    },
+    {
+      "task_id": "74dd1130",
+      "solved": true,
+      "program": [
+        "transpose"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "75b8110e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.283
+    },
+    {
+      "task_id": "760b3cac",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.232
+    },
+    {
+      "task_id": "776ffc46",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.156
+    },
+    {
+      "task_id": "77fdfe62",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.277
+    },
+    {
+      "task_id": "780d0b14",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.202
+    },
+    {
+      "task_id": "7837ac64",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 2.169
+    },
+    {
+      "task_id": "794b24be",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.092
+    },
+    {
+      "task_id": "7b6016b9",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.5
+    },
+    {
+      "task_id": "7b7f7511",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.159
+    },
+    {
+      "task_id": "7c008303",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.328
+    },
+    {
+      "task_id": "7ddcd7ec",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.357
+    },
+    {
+      "task_id": "7df24a62",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.46
+    },
+    {
+      "task_id": "7e0986d6",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.627
+    },
+    {
+      "task_id": "7f4411dc",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.596
+    },
+    {
+      "task_id": "7fe24cdd",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.09
+    },
+    {
+      "task_id": "80af3007",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.864
+    },
+    {
+      "task_id": "810b9b61",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.728
+    },
+    {
+      "task_id": "82819916",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.331
+    },
+    {
+      "task_id": "83302e8f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.57
+    },
+    {
+      "task_id": "834ec97d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.086
+    },
+    {
+      "task_id": "8403a5d5",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.353
+    },
+    {
+      "task_id": "846bdb03",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.582
+    },
+    {
+      "task_id": "855e0971",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.851
+    },
+    {
+      "task_id": "85c4e7cd",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.513
+    },
+    {
+      "task_id": "868de0fa",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.355
+    },
+    {
+      "task_id": "8731374e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.163
+    },
+    {
+      "task_id": "88a10436",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.318
+    },
+    {
+      "task_id": "88a62173",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.142
+    },
+    {
+      "task_id": "890034e9",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.264
+    },
+    {
+      "task_id": "8a004b2b",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.872
+    },
+    {
+      "task_id": "8be77c9e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.086
+    },
+    {
+      "task_id": "8d5021e8",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.083
+    },
+    {
+      "task_id": "8d510a79",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.354
+    },
+    {
+      "task_id": "8e1813be",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.859
+    },
+    {
+      "task_id": "8e5a5113",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.15
+    },
+    {
+      "task_id": "8eb1be9a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.824
+    },
+    {
+      "task_id": "8efcae92",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.129
+    },
+    {
+      "task_id": "8f2ea7aa",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.323
+    },
+    {
+      "task_id": "90c28cc7",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.24
+    },
+    {
+      "task_id": "90f3ed37",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.528
+    },
+    {
+      "task_id": "913fb3ed",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.501
+    },
+    {
+      "task_id": "91413438",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.086
+    },
+    {
+      "task_id": "91714a58",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.826
+    },
+    {
+      "task_id": "9172f3a0",
+      "solved": true,
+      "program": [
+        "scale_3"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "928ad970",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.534
+    },
+    {
+      "task_id": "93b581b8",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.187
+    },
+    {
+      "task_id": "941d9a10",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.354
+    },
+    {
+      "task_id": "94f9d214",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.196
+    },
+    {
+      "task_id": "952a094c",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.359
+    },
+    {
+      "task_id": "9565186b",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.088
+    },
+    {
+      "task_id": "95990924",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.355
+    },
+    {
+      "task_id": "963e52fc",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.171
+    },
+    {
+      "task_id": "97999447",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.332
+    },
+    {
+      "task_id": "97a05b5b",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.334
+    },
+    {
+      "task_id": "98cf29f8",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.762
+    },
+    {
+      "task_id": "995c5fa3",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.21
+    },
+    {
+      "task_id": "99b1bc43",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.218
+    },
+    {
+      "task_id": "99fa7670",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.187
+    },
+    {
+      "task_id": "9aec4887",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.759
+    },
+    {
+      "task_id": "9af7a82c",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.087
+    },
+    {
+      "task_id": "9d9215db",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.03
+    },
+    {
+      "task_id": "9dfd6313",
+      "solved": true,
+      "program": [
+        "transpose"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "9ecd008a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.854
+    },
+    {
+      "task_id": "9edfc990",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.62
+    },
+    {
+      "task_id": "9f236235",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.093
+    },
+    {
+      "task_id": "a1570a43",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.234
+    },
+    {
+      "task_id": "a2fd1cf0",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.713
+    },
+    {
+      "task_id": "a3325580",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.359
+    },
+    {
+      "task_id": "a3df8b1e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.19
+    },
+    {
+      "task_id": "a416b8f3",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.087
+    },
+    {
+      "task_id": "a48eeaf7",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.354
+    },
+    {
+      "task_id": "a5313dff",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.275
+    },
+    {
+      "task_id": "a5f85a15",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.088
+    },
+    {
+      "task_id": "a61ba2ce",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.587
+    },
+    {
+      "task_id": "a61f2674",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.326
+    },
+    {
+      "task_id": "a64e4611",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 2.513
+    },
+    {
+      "task_id": "a65b410d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.234
+    },
+    {
+      "task_id": "a68b268e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.339
+    },
+    {
+      "task_id": "a699fb00",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.148
+    },
+    {
+      "task_id": "a740d043",
+      "solved": true,
+      "program": [
+        "swap_0_1",
+        "crop_bbox_nz"
+      ],
+      "depth": 2,
+      "elapsed_sec": 0.024
+    },
+    {
+      "task_id": "a78176bb",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.368
+    },
+    {
+      "task_id": "a79310a0",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.153
+    },
+    {
+      "task_id": "a85d4709",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.09
+    },
+    {
+      "task_id": "a87f7484",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.207
+    },
+    {
+      "task_id": "a8c38be5",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.654
+    },
+    {
+      "task_id": "a8d7556c",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.007
+    },
+    {
+      "task_id": "a9f96cdd",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.1
+    },
+    {
+      "task_id": "aabf363d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.246
+    },
+    {
+      "task_id": "aba27056",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.231
+    },
+    {
+      "task_id": "ac0a08a4",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.086
+    },
+    {
+      "task_id": "ae3edfdc",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.698
+    },
+    {
+      "task_id": "ae4f1146",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.332
+    },
+    {
+      "task_id": "aedd82e4",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.086
+    },
+    {
+      "task_id": "af902bf9",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.362
+    },
+    {
+      "task_id": "b0c4d837",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.189
+    },
+    {
+      "task_id": "b190f7f5",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.113
+    },
+    {
+      "task_id": "b1948b0a",
+      "solved": true,
+      "program": [
+        "swap_2_6"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "b230c067",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.373
+    },
+    {
+      "task_id": "b27ca6d3",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.82
+    },
+    {
+      "task_id": "b2862040",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.386
+    },
+    {
+      "task_id": "b527c5c6",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.376
+    },
+    {
+      "task_id": "b548a754",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.469
+    },
+    {
+      "task_id": "b60334d2",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.333
+    },
+    {
+      "task_id": "b6afb2da",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.377
+    },
+    {
+      "task_id": "b7249182",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.482
+    },
+    {
+      "task_id": "b775ac94",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 2.331
+    },
+    {
+      "task_id": "b782dc8a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.783
+    },
+    {
+      "task_id": "b8825c91",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.856
+    },
+    {
+      "task_id": "b8cdaf2b",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.098
+    },
+    {
+      "task_id": "b91ae062",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.116
+    },
+    {
+      "task_id": "b94a9452",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.543
+    },
+    {
+      "task_id": "b9b7f026",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.685
+    },
+    {
+      "task_id": "ba26e723",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.135
+    },
+    {
+      "task_id": "ba97ae07",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.604
+    },
+    {
+      "task_id": "bb43febb",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.393
+    },
+    {
+      "task_id": "bbc9ae5d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.061
+    },
+    {
+      "task_id": "bc1d5164",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.191
+    },
+    {
+      "task_id": "bd4472b8",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.268
+    },
+    {
+      "task_id": "bda2d7a6",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.281
+    },
+    {
+      "task_id": "bdad9b1f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.556
+    },
+    {
+      "task_id": "be94b721",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.972
+    },
+    {
+      "task_id": "beb8660c",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.858
+    },
+    {
+      "task_id": "c0f76784",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.736
+    },
+    {
+      "task_id": "c1d99e64",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 2.416
+    },
+    {
+      "task_id": "c3e719e8",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.291
+    },
+    {
+      "task_id": "c3f564a4",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.637
+    },
+    {
+      "task_id": "c444b776",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.464
+    },
+    {
+      "task_id": "c59eb873",
+      "solved": true,
+      "program": [
+        "scale_2"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "c8cbb738",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.55
+    },
+    {
+      "task_id": "c8f0f002",
+      "solved": true,
+      "program": [
+        "swap_5_7"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "c909285e",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.812
+    },
+    {
+      "task_id": "c9e6f938",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.089
+    },
+    {
+      "task_id": "c9f8e694",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.57
+    },
+    {
+      "task_id": "caa06a1f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.494
+    },
+    {
+      "task_id": "cbded52d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.308
+    },
+    {
+      "task_id": "cce03e0d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.1
+    },
+    {
+      "task_id": "cdecee7f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.384
+    },
+    {
+      "task_id": "ce22a75a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.365
+    },
+    {
+      "task_id": "ce4f8723",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.25
+    },
+    {
+      "task_id": "ce602527",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.017
+    },
+    {
+      "task_id": "ce9e57f2",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.293
+    },
+    {
+      "task_id": "cf98881b",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.24
+    },
+    {
+      "task_id": "d037b0a7",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.114
+    },
+    {
+      "task_id": "d06dbe63",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.578
+    },
+    {
+      "task_id": "d07ae81c",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.831
+    },
+    {
+      "task_id": "d0f5fe59",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.601
+    },
+    {
+      "task_id": "d10ecb37",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.188
+    },
+    {
+      "task_id": "d13f3404",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.095
+    },
+    {
+      "task_id": "d22278a0",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.396
+    },
+    {
+      "task_id": "d23f8c26",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.098
+    },
+    {
+      "task_id": "d2abd087",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.413
+    },
+    {
+      "task_id": "d364b489",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.348
+    },
+    {
+      "task_id": "d406998b",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.152
+    },
+    {
+      "task_id": "d43fd935",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.351
+    },
+    {
+      "task_id": "d4469b4b",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.168
+    },
+    {
+      "task_id": "d4a91cb9",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.478
+    },
+    {
+      "task_id": "d4f3cd78",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.393
+    },
+    {
+      "task_id": "d511f180",
+      "solved": true,
+      "program": [
+        "swap_5_8"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "d5d6de2d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.402
+    },
+    {
+      "task_id": "d631b094",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.091
+    },
+    {
+      "task_id": "d687bc17",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.545
+    },
+    {
+      "task_id": "d6ad076f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.368
+    },
+    {
+      "task_id": "d89b689b",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.401
+    },
+    {
+      "task_id": "d8c310e9",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.313
+    },
+    {
+      "task_id": "d90796e8",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.093
+    },
+    {
+      "task_id": "d9f24cd1",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.395
+    },
+    {
+      "task_id": "d9fac9be",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.205
+    },
+    {
+      "task_id": "dae9d2b5",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.128
+    },
+    {
+      "task_id": "db3e9e38",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.172
+    },
+    {
+      "task_id": "db93a21d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.357
+    },
+    {
+      "task_id": "dbc1a6ce",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.435
+    },
+    {
+      "task_id": "dc0a314f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.994
+    },
+    {
+      "task_id": "dc1df850",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.244
+    },
+    {
+      "task_id": "dc433765",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.182
+    },
+    {
+      "task_id": "ddf7fa4f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.48
+    },
+    {
+      "task_id": "de1cd16c",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.018
+    },
+    {
+      "task_id": "ded97339",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.466
+    },
+    {
+      "task_id": "e179c5f4",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.21
+    },
+    {
+      "task_id": "e21d9049",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.549
+    },
+    {
+      "task_id": "e26a3af2",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.857
+    },
+    {
+      "task_id": "e3497940",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.391
+    },
+    {
+      "task_id": "e40b9e2f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.445
+    },
+    {
+      "task_id": "e48d4e1a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.404
+    },
+    {
+      "task_id": "e5062a87",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.456
+    },
+    {
+      "task_id": "e509e548",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.346
+    },
+    {
+      "task_id": "e50d258f",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.457
+    },
+    {
+      "task_id": "e6721834",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.671
+    },
+    {
+      "task_id": "e73095fd",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.856
+    },
+    {
+      "task_id": "e76a88a6",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.44
+    },
+    {
+      "task_id": "e8593010",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.44
+    },
+    {
+      "task_id": "e8dc4411",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.737
+    },
+    {
+      "task_id": "e9614598",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.456
+    },
+    {
+      "task_id": "e98196ab",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.645
+    },
+    {
+      "task_id": "e9afcf9a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.118
+    },
+    {
+      "task_id": "ea32f347",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.429
+    },
+    {
+      "task_id": "ea786f4a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.091
+    },
+    {
+      "task_id": "eb281b96",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.227
+    },
+    {
+      "task_id": "eb5a1d5d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.966
+    },
+    {
+      "task_id": "ec883f72",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.253
+    },
+    {
+      "task_id": "ecdecbb3",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.779
+    },
+    {
+      "task_id": "ed36ccf7",
+      "solved": true,
+      "program": [
+        "rot270"
+      ],
+      "depth": 1,
+      "elapsed_sec": 0.0
+    },
+    {
+      "task_id": "ef135b50",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.525
+    },
+    {
+      "task_id": "f15e1fac",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.945
+    },
+    {
+      "task_id": "f1cefba8",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.997
+    },
+    {
+      "task_id": "f25fbde4",
+      "solved": true,
+      "program": [
+        "crop_bbox_nz",
+        "scale_2"
+      ],
+      "depth": 2,
+      "elapsed_sec": 0.017
+    },
+    {
+      "task_id": "f25ffba3",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.253
+    },
+    {
+      "task_id": "f2829549",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.153
+    },
+    {
+      "task_id": "f35d900a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.661
+    },
+    {
+      "task_id": "f5b8619d",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.099
+    },
+    {
+      "task_id": "f76d97a5",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.09
+    },
+    {
+      "task_id": "f8a8fe49",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.731
+    },
+    {
+      "task_id": "f8b3ba0a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.588
+    },
+    {
+      "task_id": "f8c80d96",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.388
+    },
+    {
+      "task_id": "f8ff0b80",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.529
+    },
+    {
+      "task_id": "f9012d9b",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.167
+    },
+    {
+      "task_id": "fafffa47",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.146
+    },
+    {
+      "task_id": "fcb5c309",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.586
+    },
+    {
+      "task_id": "fcc82909",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.361
+    },
+    {
+      "task_id": "feca6190",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.053
+    },
+    {
+      "task_id": "ff28f65a",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 0.151
+    },
+    {
+      "task_id": "ff805c23",
+      "solved": false,
+      "program": null,
+      "depth": null,
+      "elapsed_sec": 1.654
+    }
+  ]
+}
