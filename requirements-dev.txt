@@ -1,15 +1,15 @@
-# ARC-AGI-Explorations · dev / test dependencies
+# ARC-AGI-Explorations - dev / test dependencies
 #
-# 用法：`pip install -r requirements-dev.txt`（会自动带上 runtime deps）
-# 与 runtime 分开是为了 Kaggle notebook 提交时只装 requirements.txt。
+# Usage: `pip install -r requirements-dev.txt` (pulls in runtime deps too).
+# Kept separate so Kaggle notebooks can install runtime only.
 
 -r requirements.txt
 
-# 单元测试
+# Unit tests
 pytest~=8.0.0
 
-# 静态类型检查（solver 里 DSL 类型多，值得上）
+# Static type checking (DSL has many typed callables; worth it)
 mypy~=1.8.0
 
-# 代码格式（团队规范未定前，先 pin ruff 一家，省得 black/isort 打架）
+# Linter/formatter (pin one tool to avoid black/isort conflicts)
 ruff~=0.3.0
