@@ -38,6 +38,35 @@ v3 是**最后一版 DSL**——之后精力全给 Direction A。
 
 ---
 
+## v3 在 evaluation split 上的表现（7/12）
+
+同一份 v3 DSL / depth≤2 / 5s per task，跑 ARC-1 evaluation 400 题：
+
+| Split | Solved / 400 | Solve rate | 耗时 |
+|-------|--------------|-----------|------|
+| training   | 43 | **10.75%** | 326s |
+| evaluation | 6  | **1.5%**  | 769s |
+
+**eval / train = 0.14**（掉到 1/7）。
+
+Solved 清单（全 6 题）：
+
+| task | depth | program |
+|------|-------|---------|
+| 60c09cac | 1 | `scale_2` |
+| 68b67ca3 | 2 | `remove_empty_rows` ∘ `remove_empty_cols` |
+| 73182012 | 2 | `crop_bbox_nz` ∘ `crop_tl_half` |
+| 84db8fc4 | 2 | `fill_enclosed_5` ∘ `swap_0_2` |
+| 9ddd00f0 | 2 | `overlay_rot180_or` ∘ `overlay_transpose_or` |
+| be03b35f | 2 | `rot90` ∘ `crop_tl_half` |
+
+**关键观察**：
+1. **6 题全部来自 v2/v3 新增原语**，v1 的基础几何 (identity/flip/rot/tile/swap/fill_bg) 在 eval 上**0 命中**。ARC-1 eval 显式避开了 training 的浅表操作。
+2. training top-1 `crop_bbox_nz` (8 次) 在 eval 只出现 1 次。**使用分布不迁移**。
+3. Chollet 说 eval 分布更陌生——这次给出一个具体数量级：**0.14×**。这是"手写 DSL 严重过拟合 training"最干净的证据，直接进 meeting §6.5 / Direction A 立论。
+
+---
+
 ## 全部原语清单（按版本）
 
 ### v1（63 个）— 几何 + 对称换色 + 背景填充

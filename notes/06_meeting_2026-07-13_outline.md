@@ -50,24 +50,26 @@ PAC-Bayes / meta-learning，理论无 debug，风险高
 
 **倾向**：A 主 + B 挂 discussion
 
-## 6.5 · Baseline（7/11 已跑三版）
+## 6.5 · Baseline（7/11 跑三版 training，7/12 跑 v3 evaluation）
 
-手写 DSL + 暴力 depth≤2 搜索，同一 harness 跑三版：
+手写 DSL + 暴力 depth≤2 搜索，同一 harness：
 
-| 版本 | Primitives | Solved / 400 | Solve rate | 耗时 |
-|------|-----------|-------------|-----------|------|
-| v1 | 63  | 10 | 2.5%   | 27s |
-| v2 | 170 | 19 | 4.75%  | 204s |
-| **v3** | **197** | **43** | **10.75%** | 326s |
+| 版本 | Primitives | Split | Solved / 400 | Solve rate | 耗时 |
+|------|-----------|-------|--------------|-----------|------|
+| v1 | 63  | training   | 10 | 2.5%   | 27s |
+| v2 | 170 | training   | 19 | 4.75%  | 204s |
+| **v3** | **197** | training   | **43** | **10.75%** | 326s |
+| v3 | 197 | **evaluation** | **6** | **1.5%** | 769s |
 
-- 一键复现：`python -m solver.runner --split training --max-tasks -1 --depth 2 --budget 5`
+- 一键复现：`python -m solver.runner --split {training|evaluation} --max-tasks -1 --depth 2 --budget 5`
 - 详细 changelog 与每版原语清单：`notes/05_dsl_changelog.md`
 - **每版严格支配前一版**（0 退化）；depth-2 到 v3 才开始有实质贡献（18/43）
 
 **关键 talking points**：
 1. **不是要打分数**，是**建立可复现测量框架** —— 后续 Direction A 的每个改动都要在同一个 harness 上跑，回归看得见。
 2. **结构化算子 ROI 远大于参数展开**：v3 加 27 个结构化 (+2.3×)，v2 加 107 个参数化 (+1.9×) —— 教训直接指向"手写 DSL 不 scalable"，Direction A 的立论。
-3. **10.75% 就是这条路的天花板**：ARC-1 剩下的 357 题需要 counting / pattern-generation / test-input-conditioned rules，纯 Grid→Grid 吃不到。**继续扩 DSL 是死路，转 operator learning 才有出路**。
+3. **train→eval 掉到 1/7（10.75% → 1.5%）**：eval solved 6 题里 0 题来自 v1 基础几何，DSL 明显在**过拟合 training 分布**。这是"人肉扩 DSL 是死路"最硬的一个数字。
+4. **10.75% 就是这条路的 training 天花板**：ARC-1 剩下的题需要 counting / pattern-generation / test-input-conditioned rules，纯 Grid→Grid 吃不到。**转 operator learning 才有出路**。
 
 ## 7 · Target
 - **ARC Prize 2026 Paper Track**，deadline **11-09**
